@@ -1,161 +1,131 @@
-# css
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E RESETS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  text-align: center;
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* HEADER */
-
-header{
-  background: linear-gradient(90deg, #1b5e20, #43a047);
-  color: white;
-
-  padding: 40px 20px;
+/* ==========================================================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-header h1{
-  font-size: 55px;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-header p{
-  margin-top: 10px;
-  font-size: 22px;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
-/* MENU */
-
-nav{
-  margin-top: 25px;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
 }
 
-nav a{
-  color: white;
-  text-decoration: none;
-
-  margin: 0 15px;
-
-  font-size: 18px;
-  font-weight: bold;
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-nav a:hover{
-  text-decoration: underline;
+.nav-links a:hover {
+    color: #3498db;
 }
 
-/* HERO */
-
-.hero{
-  height: 80vh;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  background:
-  linear-gradient(rgba(0,0,0,0.5),
-  rgba(0,0,0,0.5)),
-
-  url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop');
-
-  background-size: cover;
-  background-position: center;
-
-  color: white;
+/* ==========================================================================
+   3. SECÇÃO HERO (DESTAQUE PRINCIPAL)
+   ========================================================================== */
+.hero {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
 }
 
-.hero h2{
-  font-size: 50px;
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-.hero p{
-  margin: 20px 0;
-  font-size: 22px;
+.hero p {
+    font-size: 20px;
+    margin-bottom: 35px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* BOTÃO */
-
-button{
-  padding: 15px 35px;
-
-  border: none;
-  border-radius: 10px;
-
-  background: #43a047;
-  color: white;
-
-  font-size: 18px;
-  cursor: pointer;
+.btn {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 14px 35px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    transition: all 0.3s ease;
 }
 
-button:hover{
-  background: #2e7d32;
+.btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
 }
 
-/* SEÇÕES */
-
-.section{
-  padding: 80px 20px;
+/* ==========================================================================
+   4. ESTRUTURA DE CONTEÚDO E CARDS
+   ========================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
 }
 
-.section h2{
-  font-size: 40px;
-  color: #1b5e20;
-
-  margin-bottom: 20px;
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: #2c3e50;
+    position: relative;
 }
 
-.section p{
-  font-size: 20px;
-}
-
-/* CARDS */
-
-.card-area{
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 25px;
-
-  flex-wrap: wrap;
-
-  margin-top: 40px;
-}
-
-.card{
-  background: white;
-
-  width: 300px;
-
-  padding: 30px;
-
-  border-radius: 15px;
-
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.card h3{
-  color: #2e7d32;
-  margin-bottom: 15px;
-}
-
-/* FOOTER */
-
-footer{
-  background: #1b5e20;
-  color: white;
-
-  padding: 25px;
-
-  font-size: 18px;
+/* Linha decorativa abaixo do título */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #3498db;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
 }
